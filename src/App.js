@@ -10,6 +10,7 @@ import AuthProvidor from './ContextApi/AuthProvidor';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import MyTours from './Pages/MyTours/MyTours';
 import ManageTours from './Pages/MangeTours/ManageTours';
+import AddNewTour from './Pages/AddNewTour/AddNewTour';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path='/managetours'>
             <ManageTours></ManageTours>
+          </PrivateRoute>
+          <PrivateRoute path='/managetour'>
+            <AddNewTour></AddNewTour>
           </PrivateRoute>
           <Route path='*'>
             <Error></Error>

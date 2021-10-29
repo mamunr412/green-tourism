@@ -6,11 +6,11 @@ import { useEffect } from 'react';
 const ShowJoinedTour = ({ tour, deleteJoinedTour, updateJoinedTour }) => {
     const [newStatus, setNewStatus] = useState(false);
 
-    const { name, reqDate, number, address, tourID, _id, status } = tour;
+    const { name, reqDate, number, address, tourID, _id, status, email } = tour;
     const [tourIs, setTourIs] = useState({});
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/tour/${tourID}`)
+        axios.get(`https://mighty-waters-11643.herokuapp.com/tour/${tourID}`)
             .then(tour => setTourIs(tour.data))
             .finally(() => {
                 setNewStatus(status);
@@ -18,12 +18,11 @@ const ShowJoinedTour = ({ tour, deleteJoinedTour, updateJoinedTour }) => {
     }, [tourID, status])
 
     const updateStatus = () => {
-
         if (newStatus) {
-            setNewStatus(false)
+            setNewStatus(false);
             updateJoinedTour(_id, false);
         } else {
-            setNewStatus(true)
+            setNewStatus(true);
             updateJoinedTour(_id, true);
         }
     }
@@ -37,6 +36,7 @@ const ShowJoinedTour = ({ tour, deleteJoinedTour, updateJoinedTour }) => {
                     <div>
                         <h1>{tourIs.name}</h1>
                         <h2>{name}</h2>
+                        <p>Email: {email}</p>
                         <small>Status: {newStatus ?
                             <small>Active</small> :
                             <small>Pending</small>}

@@ -11,7 +11,7 @@ const ManageTours = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/alljoinedTours')
+        axios.get('https://mighty-waters-11643.herokuapp.com/alljoinedTours')
             .then(res => {
                 setMyTours(res.data)
             }).finally(() => {
@@ -22,7 +22,7 @@ const ManageTours = () => {
     const deleteJoinedTour = id => {
         const confirm = window.confirm('Are You Sure?');
         if (confirm) {
-            axios.delete(`http://localhost:5000/deleteJoinedTour/${id}`)
+            axios.delete(`https://mighty-waters-11643.herokuapp.com/deleteJoinedTour/${id}`)
                 .then(res => {
                     console.log(res.data)
                     if (res.data.deletedCount > 0) {
@@ -36,10 +36,12 @@ const ManageTours = () => {
 
 
     const updateJoinedTour = (id, newStatus) => {
-        console.log(id, newStatus);
-
-        axios.patch(`http://localhost:5000/joinedtour/:${id}`, { newStatus })
-            .then(res => console.log(res.data))
+        axios.patch(`https://mighty-waters-11643.herokuapp.com/joinedtour/${id}`, { status: newStatus })
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    alert('Status Updated')
+                }
+            })
     }
     return (
         <div className="container">

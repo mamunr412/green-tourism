@@ -14,7 +14,7 @@ const MyTours = () => {
     useEffect(() => {
         const email = [user.email];
 
-        axios.post('http://localhost:5000/joinedtours/byuser', email)
+        axios.post('https://mighty-waters-11643.herokuapp.com/joinedtours/byuser', email)
             .then(tours => {
                 setMyTours(tours.data)
             }).finally(() => {
@@ -25,7 +25,7 @@ const MyTours = () => {
     const deleteJoinedTour = id => {
         const confirm = window.confirm('Are You Sure?');
         if (confirm) {
-            axios.delete(`http://localhost:5000/deleteJoinedTour/${id}`)
+            axios.delete(`https://mighty-waters-11643.herokuapp.com/deleteJoinedTour/${id}`)
                 .then(res => {
                     console.log(res.data)
                     if (res.data.deletedCount > 0) {

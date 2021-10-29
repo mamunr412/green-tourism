@@ -17,7 +17,7 @@ const JoinTour = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/tour/${id}`)
+        axios.get(`https://mighty-waters-11643.herokuapp.com/tour/${id}`)
             .then(tour => setTour(tour.data))
     }, [id])
 
@@ -33,19 +33,13 @@ const JoinTour = () => {
         joinDetails.status = status;
         console.log(joinDetails);
 
-        axios.post('http://localhost:5000/joinedtour', joinDetails)
-            .then(confirm => {
-                console.log(confirm)
-
-                reset();
-
-                alert('You joined succesfully!')
+        axios.post('https://mighty-waters-11643.herokuapp.com/joinedtour', joinDetails)
+            .then(res => {
+                if (res.data.insertedId) {
+                    reset();
+                    alert('You joined succesfully!')
+                }
             })
-
-
-
-
-
     }
 
 

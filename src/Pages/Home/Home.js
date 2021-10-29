@@ -10,10 +10,10 @@ const Home = () => {
     const [tours, setTours] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/tours')
+        axios.get('https://mighty-waters-11643.herokuapp.com/tours')
             .then(tours => setTours(tours.data))
     }, [])
-    console.log(tours)
+
     return (
         <div>
             <div className="banner">
