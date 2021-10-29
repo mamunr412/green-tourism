@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Tour = ({ tour }) => {
 
-    const { name, img2, cost, overview } = tour;
+    const { name, img2, cost, overview, _id } = tour;
 
     return (
         <Col>
@@ -16,7 +16,7 @@ const Tour = ({ tour }) => {
                         <Card.Text>
                             Cost: {cost}tk.
                         </Card.Text>
-                        <Link to="/">Join This Tour</Link>
+                        <Link to={`/jointour/${_id}`}>Join This Tour</Link>
                     </div>
                     <Card.Text title={overview} className="w-75 ps-3">
                         {overview.slice(0, 150)}. . .

@@ -34,13 +34,18 @@ const Home = () => {
                     <div>
                         <h1 className='text-center pt-3 border-bottom'>Our Tour's</h1>
                     </div>
-                    <Row xs={1} md={2} className="g-4">
+                    <div>
                         {!tours ?
-                            <Spinner className='text-center' animation="border" />
+                            <div className="text-center py-5">
+                                <Spinner animation="border" />
+                            </div>
+
                             :
-                            tours.map(tour => <Tour key={tour._id} tour={tour}></Tour>)
+                            <Row xs={1} md={2} className="g-4">
+                                {tours.map(tour => <Tour key={tour._id} tour={tour}></Tour>)}
+                            </Row>
                         }
-                    </Row>
+                    </div>
                 </div>
             </div>
         </div>

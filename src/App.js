@@ -4,27 +4,36 @@ import Home from './Pages/Home/Home';
 import Header from './Pages/Header/Header';
 import Footer from './Pages/Footer/Footer';
 import Error from './Pages/Error/Error';
+import JoinTour from './Pages/JoinTour/JoinTour';
+import Login from './Pages/Login/Login';
+import AuthProvidor from './ContextApi/AuthProvidor';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
-    <div>
+    <AuthProvidor>
       <Router>
         <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Home></Home>
           </Route>
-          <Route exact path='/home'>
+          <Route path='/home'>
             <Home></Home>
           </Route>
-
+          <Route path='/login'>
+            <Login></Login>
+          </Route>
+          <PrivateRoute path='/jointour/:id'>
+            <JoinTour></JoinTour>
+          </PrivateRoute>
           <Route path='*'>
             <Error></Error>
           </Route>
         </Switch>
         <Footer></Footer>
       </Router>
-    </div>
+    </AuthProvidor>
   );
 }
 
