@@ -26,9 +26,11 @@ const JoinTour = () => {
     const onSubmit = data => {
         const joinDetails = data;
         const date = new Date();
+        const status = false;
         const joinDate = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
         joinDetails.reqDate = joinDate;
         joinDetails.tourID = _id;
+        joinDetails.status = status;
         console.log(joinDetails);
 
         axios.post('http://localhost:5000/joinedtour', joinDetails)

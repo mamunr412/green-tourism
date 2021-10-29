@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import useAuth from '../../ContextApi/useAuth';
-import SingleTour from './SingleTour/SingleTour';
+import ShowJoinedTour from '../ShowJoinedTour/ShowJoinedTour';
 
 const MyTours = () => {
     const { user } = useAuth();
@@ -19,7 +19,7 @@ const MyTours = () => {
                 setMyTours(tours.data)
             }).finally(() => {
                 setLoading(false);
-            })
+            });
     }, [user])
 
     const deleteJoinedTour = id => {
@@ -44,7 +44,7 @@ const MyTours = () => {
                     <p>loading...</p>
                     :
                     <div>
-                        {myTours.map(tour => <SingleTour deleteJoinedTour={deleteJoinedTour} key={tour._id} tour={tour}></SingleTour>)}
+                        {myTours.map(tour => <ShowJoinedTour deleteJoinedTour={deleteJoinedTour} key={tour._id} tour={tour}></ShowJoinedTour>)}
                     </div>
             }
         </div>
