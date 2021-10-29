@@ -8,6 +8,8 @@ import JoinTour from './Pages/JoinTour/JoinTour';
 import Login from './Pages/Login/Login';
 import AuthProvidor from './ContextApi/AuthProvidor';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import MyTours from './Pages/MyTours/MyTours';
+import ManageTours from './Pages/MangeTours/ManageTours';
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
           </Route>
           <PrivateRoute path='/jointour/:id'>
             <JoinTour></JoinTour>
+          </PrivateRoute>
+          <PrivateRoute exact path='/mytours'>
+            <MyTours></MyTours>
+          </PrivateRoute>
+          <PrivateRoute path='/managetours'>
+            <ManageTours></ManageTours>
           </PrivateRoute>
           <Route path='*'>
             <Error></Error>

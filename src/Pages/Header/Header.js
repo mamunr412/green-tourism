@@ -18,17 +18,21 @@ const Header = () => {
                         <Nav.Link as={Link} to='/home'>Pricing</Nav.Link>
                     </Nav>
                     <Nav>
-                        <div className='d-flex align-items-center flex-md-row flex-column'>
-                            <div>
-                                {user.email && <p className='text-warning mb-0'>Hello, {user.displayName}</p>}
-                            </div>
-                            <div>
-                                {user.email ?
-                                    <Nav.Link onClick={logOut}>Logout</Nav.Link>
+                        <div>
+
+                            {
+                                user.email ?
+                                    <div className='d-flex align-items-md-center flex-md-row flex-column pt-3 pt-md-0 border-md-top'>
+                                        <p className='text-warning mb-0'>Hello, {user.displayName}</p>
+                                        <Nav.Link as={Link} to='/mytours'>My Tours</Nav.Link>
+                                        <Nav.Link as={Link} to='/managetours'>Manage All Tours</Nav.Link>
+                                        <Nav.Link onClick={logOut}>Logout</Nav.Link>
+                                    </div>
                                     :
-                                    <Nav.Link as={Link} to='/login'>Login</Nav.Link>
-                                }
-                            </div>
+                                    <div>
+                                        <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+                                    </div>
+                            }
                         </div>
                     </Nav>
                 </Navbar.Collapse>

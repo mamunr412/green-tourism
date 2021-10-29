@@ -48,6 +48,14 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div>
+                <h3>Extra section</h3>
+
+            </div>
+            <div>
+                <h3>Extra section</h3>
+
+            </div>
         </div>
     );
 };
