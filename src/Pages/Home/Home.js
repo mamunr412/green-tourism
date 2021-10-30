@@ -21,8 +21,8 @@ const Home = () => {
     }, [])
 
     return (
-        <>
-            <div className="banner">
+        <div>
+            <div className='banner-section'>
                 <div className="container">
                     <div className="py-md-5 text-center">
                         <div className='banner-text1 py-5'>
@@ -149,7 +149,7 @@ const Home = () => {
                     </Row>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
