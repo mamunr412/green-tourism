@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Row, Spinner } from 'react-bootstrap';
 import useAuth from '../../ContextApi/useAuth';
 import ShowJoinedTour from '../ShowJoinedTour/ShowJoinedTour';
 
@@ -38,15 +39,18 @@ const MyTours = () => {
     }
     console.log(myTours)
     return (
-        <div>
-            {
-                loading ?
-                    <p>loading...</p>
-                    :
-                    <div>
-                        {myTours.map(tour => <ShowJoinedTour deleteJoinedTour={deleteJoinedTour} key={tour._id} tour={tour}></ShowJoinedTour>)}
-                    </div>
-            }
+        <div className='all-bg'>
+            <div className='container pt-5 text-center'>
+                <h1 className='tour-title border-bottom text-uppercase'>Your Tours</h1>
+                {
+                    loading ?
+                        <Spinner animation="border" variant="success" />
+                        :
+                        <Row xs={2} md={4} className="g-4">
+                            {myTours.map(tour => <ShowJoinedTour deleteJoinedTour={deleteJoinedTour} key={tour._id} tour={tour}></ShowJoinedTour>)}
+                        </Row>
+                }
+            </div>
         </div>
     );
 };

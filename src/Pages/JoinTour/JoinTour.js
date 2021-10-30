@@ -44,10 +44,10 @@ const JoinTour = () => {
 
 
     return (
-        <div className='join-tour-bg py-3'>
+        <div className='all-bg py-3'>
             <div className='carousel-bg'>
                 <div className='container'>
-                    <div className='col-md-8 pb-3 mx-md-auto mx-2 col'>
+                    <div className='col-md-6 pb-3 mx-md-auto mx-2 col'>
                         <CarouselLoad key={_id} img1={img1} img2={img2} img3={img3}></CarouselLoad>
                     </div>
                 </div>
@@ -55,21 +55,21 @@ const JoinTour = () => {
 
             <div className='container'>
                 <div className='mt-4 text-center border-bottom'>
-                    <h1>{name}</h1>
+                    <h1 className='tour-title'>{name}</h1>
                 </div>
                 <div className='row my-3'>
-                    <div className='col-md-6'>
+                    <div className='col-md-6 p-3 tour-details'>
                         <TourDetail key={_id} tour={tour} ></TourDetail>
                     </div>
-                    <div className='col-md-6 p-md-5 p-2'>
-                        <Form onSubmit={handleSubmit(onSubmit)}>
+                    <div className='col-md-6 mt-md-0 mt-4 px-md-4'>
+                        <Form className='tour-details fw-bold rounded p-4' onSubmit={handleSubmit(onSubmit)}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" {...register("name")} placeholder="Enter Your Name" />
+                                <Form.Control required type="text" {...register("name")} placeholder="Enter Your Name" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Address</Form.Label>
-                                <Form.Control type="text" {...register("address")} placeholder="Enter Your Address" />
+                                <Form.Control required type="text" {...register("address")} placeholder="Enter Your Address" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Email</Form.Label>
@@ -77,7 +77,7 @@ const JoinTour = () => {
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Number</Form.Label>
-                                <Form.Control type="text" {...register("number")} placeholder="Enter Your Number" />
+                                <Form.Control required type="text" {...register("number")} placeholder="Enter Your Number" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
                                 Join {name}

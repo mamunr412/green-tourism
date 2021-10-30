@@ -7,7 +7,11 @@ const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
 
     if (isLoading) {
-        return <Spinner animation="border" />
+        return (
+            <div className='reload-spinner all-bg text-center pt-5'>
+                < Spinner animation="border" variant='success' />
+            </div>
+        )
     }
     else {
         return (

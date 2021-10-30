@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Row, Spinner } from 'react-bootstrap';
 import ShowJoinedTour from '../ShowJoinedTour/ShowJoinedTour';
 
 const ManageTours = () => {
@@ -44,15 +45,18 @@ const ManageTours = () => {
             })
     }
     return (
-        <div className="container">
-            {
-                loading ?
-                    <p>loading...</p>
-                    :
-                    <div>
-                        {myTours.map(tour => <ShowJoinedTour updateJoinedTour={updateJoinedTour} deleteJoinedTour={deleteJoinedTour} key={tour._id} tour={tour}></ShowJoinedTour>)}
-                    </div>
-            }
+        <div className='all-bg'>
+            <div className="container text-center py-5">
+                <h1 className='tour-title border-bottom text-uppercase'>Manage All joined Tours</h1>
+                {
+                    loading ?
+                        <Spinner animation="border" variant="success" />
+                        :
+                        <Row xs={2} md={4} className="g-4">
+                            {myTours.map(tour => <ShowJoinedTour updateJoinedTour={updateJoinedTour} deleteJoinedTour={deleteJoinedTour} key={tour._id} tour={tour}></ShowJoinedTour>)}
+                        </Row>
+                }
+            </div>
         </div>
     );
 };

@@ -15,48 +15,52 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
+        <>
             <div className="banner">
                 <div className="container">
-                    <div className=" d-flex justify-content-between flex-md-row flex-column">
-                        <div className="py-5">
-                            <h1 className='banner-text1'>Green Tourism</h1>
-                            <h1 className='banner-text2'>Lets Explore The World!</h1>
+                    <div className="py-md-5 text-center">
+                        <div className='banner-text1 py-5'>
+                            <h1>Green Tourism</h1>
+                            <h3>Lets Explore The World!</h3>
                         </div>
-                        <div className="py-5">
-                            <img width="100%" className='cover-img' src="https://15togo.com/static/img/slide-3-img.6a51ec1.gif" alt="" />
+                        <div className='py-5 d-flex flex-md-row flex-column'>
+                            <button className='ms-md-auto join-fb-btn'><i className="fab fa-facebook-f"></i> Join With Facebook</button>
+                            <button className='me-md-auto join-fb-btn join-google-btn'><i class="fab fa-google"></i> Join With Google</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="all-bg">
                 <div className="container">
                     <div>
-                        <h1 className='text-center pt-3 border-bottom'>Our Tour's</h1>
+                        <div>
+                            <h1 className='text-center tour-title pt-5 border-bottom'>OUR TOUR'S</h1>
+                        </div>
+                        <div>
+                            {!tours ?
+                                <div className="text-center py-5">
+                                    <Spinner animation="border" variant="primary" />
+                                </div>
+
+                                :
+                                <Row xs={1} md={3} className="g-4">
+                                    {tours.map(tour => <Tour key={tour._id} tour={tour}></Tour>)}
+                                </Row>
+                            }
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Extra section</h3>
+
                     </div>
                     <div>
-                        {!tours ?
-                            <div className="text-center py-5">
-                                <Spinner animation="border" />
-                            </div>
+                        <h3>Extra section</h3>
 
-                            :
-                            <Row xs={1} md={2} className="g-4">
-                                {tours.map(tour => <Tour key={tour._id} tour={tour}></Tour>)}
-                            </Row>
-                        }
                     </div>
                 </div>
             </div>
-            <div>
-                <h3>Extra section</h3>
-
-            </div>
-            <div>
-                <h3>Extra section</h3>
-
-            </div>
-        </div>
+        </>
     );
 };
 
