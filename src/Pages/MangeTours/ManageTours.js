@@ -65,11 +65,9 @@ const ManageTours = () => {
                                         </div>
                                 }
                             </div>
-
                     }
                 </div>
             </div>
-
         </div>
     );
 };

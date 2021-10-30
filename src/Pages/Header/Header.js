@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand style={{ fontFamily: "'Lobster', cursive" }} as={Link} to="/">Green Tourism</Navbar.Brand>
+                <Navbar.Brand className="border-bottom pb-0" style={{ fontFamily: "'Lobster', cursive", fontSize: '30px' }} as={Link} to="/">Green Tourism</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -26,11 +26,11 @@ const Header = () => {
                                     <div className='d-flex align-items-md-center flex-md-row flex-column pt-3 pt-md-0 border-md-top'>
                                         <p className='text-warning mb-0'>Hello, {user.displayName}</p>
                                         <Nav.Link as={Link} to='/mytours'>My Tours</Nav.Link>
-                                        <Nav.Link onClick={logOut}>Logout</Nav.Link>
+                                        <Nav.Link onClick={logOut}><i className="fas fa-sign-out-alt"></i> Logout</Nav.Link>
                                     </div>
                                     :
                                     <div>
-                                        <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+                                        <Nav.Link as={Link} to='/login'><i className="fas fa-sign-in-alt"></i> Login</Nav.Link>
                                     </div>
                             }
                         </div>

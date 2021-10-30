@@ -11,6 +11,7 @@ import { Form, Button } from 'react-bootstrap';
 import useAuth from '../../ContextApi/useAuth';
 
 const JoinTour = () => {
+
     const [tour, setTour] = useState({});
     const { id } = useParams();
     const { register, handleSubmit, reset } = useForm();

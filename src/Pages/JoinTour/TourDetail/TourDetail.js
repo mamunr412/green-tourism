@@ -1,7 +1,9 @@
 import React from 'react';
 
 const TourDetail = ({ tour }) => {
+
     const { name, checkInDate, checkOutDate, cost, included, overview, planFor } = tour;
+
     return (
         <>
             <div>
@@ -65,10 +67,8 @@ const TourDetail = ({ tour }) => {
                                 <i className="fas text-danger fa-times"></i>
                         }
                     </div>
-
                 </div>
             </div>
-
         </>
     );
 };

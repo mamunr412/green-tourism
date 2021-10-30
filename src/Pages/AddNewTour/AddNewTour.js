@@ -17,6 +17,8 @@ const AddNewTour = () => {
     const [gratuities, setGratuities] = useState(false);
     const [stayCost, setstayCost] = useState(false);
     const [tourInserted, setTourInserted] = useState(false);
+
+
     const onSubmit = data => {
         const included = {
             breakfast,
@@ -43,6 +45,7 @@ const AddNewTour = () => {
             .then(tours => setTours(tours.data))
     }, [tourInserted])
 
+
     const deleteTour = id => {
         const confirm = window.confirm('Are You Sure?')
         if (confirm) {
@@ -62,18 +65,19 @@ const AddNewTour = () => {
 
     }
 
+
     return (
         <div className='all-bg'>
             <div className='container py-5'>
                 <div className='p-2 add-tour-form'>
                     <h1 className='tour-title'>Add a New Tour</h1>
                     <Form className='fw-bold' onSubmit={handleSubmit(onSubmit)}>
+
                         <Row className="mb-3">
                             <Form.Group className="col-md-4">
                                 <Form.Label>Tour Name</Form.Label>
                                 <Form.Control {...register("name")} type="text" placeholder="Enter Tour Name" />
                             </Form.Group>
-
                             <Form.Group className="col-md-4">
                                 <Form.Label>Tour Cost</Form.Label>
                                 <Form.Control {...register("cost")} type="text" placeholder="Enter Tour Cost" />
@@ -83,17 +87,18 @@ const AddNewTour = () => {
                                 <Form.Control {...register("planFor")} type="text" placeholder="How many days for Tour?" />
                             </Form.Group>
                         </Row>
+
                         <Row className="mb-3">
                             <Form.Group className="col-md-6">
                                 <Form.Label>Check in Date</Form.Label>
                                 <Form.Control {...register("checkInDate")} type="text" placeholder="Enter Check in date" />
                             </Form.Group>
-
                             <Form.Group className="col-md-6">
                                 <Form.Label>Check out Date</Form.Label>
                                 <Form.Control {...register("checkOutDate")} type="text" placeholder="Enter Check out date" />
                             </Form.Group>
                         </Row>
+
                         <Form.Label>Overview</Form.Label>
                         <FloatingLabel controlId="floatingTextarea2" label="Write tour overview here...">
                             <Form.Control
@@ -148,7 +153,6 @@ const AddNewTour = () => {
                                 </Form.Group>
                             </Row>
                         </Row>
-
                         <Button variant="primary" type="submit">
                             Add New Tour
                         </Button>
@@ -160,7 +164,6 @@ const AddNewTour = () => {
                     <Row xs={2} md={6} className="g-4">
                         {tours.map(tour => <DeleteTour deleteTour={deleteTour} key={tour._id} tour={tour}></DeleteTour>)}
                     </Row>
-
                 </div>
             </div >
         </div>

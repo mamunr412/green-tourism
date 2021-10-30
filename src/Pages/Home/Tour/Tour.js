@@ -18,7 +18,7 @@ const Tour = ({ tour }) => {
                             <Link className='join-tour-btn' to={`/jointour/${_id}`}>Join Tour</Link>
                         </div>
                     </div>
-                    <Card.Text title={overview} className="w-50">
+                    <Card.Text title={overview} className="ps-md-0 ps-2 w-50">
                         {overview.slice(0, 150)}. . .
                     </Card.Text>
                 </Card.Body>

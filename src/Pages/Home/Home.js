@@ -55,7 +55,7 @@ const Home = () => {
                             }
                         </div>
                     </div>
-                    <div className='px-3 rounded-3 best-places'>
+                    <div className='px-3 mt-5 rounded-3 best-places'>
                         <h1 className='text-center tour-title pt-2 border-bottom'>Best Places</h1>
                         <div className='py-3 row '>
                             <div className='col-md-6'>
@@ -106,7 +106,7 @@ const Home = () => {
                             </div>
                             <div className='col-md-6'>
                                 <h3 className='border-bottom my-3 text-white'>Here are some best places of Bangladesh you can visit.</h3>
-                                <div className='d-flex justify-content-around'>
+                                <div className='d-flex justify-content-around places text-white'>
                                     <ul>
                                         <li>Roma</li>
                                         <li>Nilgiri</li>
@@ -130,25 +130,23 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
+
             <div className='py-0 py-md-5 news-subscribe text-white'>
-                <div className='mx-2 mx-md-4 py-5'>
+                <div className='px-4 py-5'>
                     <h3 className='fw-bold fs-1 py-3'>Subscribe to our Newsletter</h3>
                     <h3 className='fs-1 py-3'>Get weekly travel inspiration, offers, contests, and more!</h3>
-                    <Form className='py-3'>
-                        <Row xs={1} md={3} className="g-4">
-                            <Col>
-                                <Form.Control placeholder="Zip Code" />
-                            </Col>
-                            <Col>
-                                <Form.Control placeholder="Email" />
-                            </Col>
-                            <Col>
-                                <Button variant="primary">Submit</Button>
-                            </Col>
-                        </Row>
-                    </Form>
+                    <Row xs={1} md={3} className="g-4">
+                        <Col>
+                            <Form.Control placeholder="Zip Code" />
+                        </Col>
+                        <Col>
+                            <Form.Control placeholder="Email" />
+                        </Col>
+                        <Col>
+                            <Button variant="primary">Submit</Button>
+                        </Col>
+                    </Row>
                 </div>
             </div>
         </>
