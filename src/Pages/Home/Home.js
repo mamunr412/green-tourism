@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 import { Button, Carousel, Col, Form, Row, Spinner } from 'react-bootstrap';
 import './Home.css'
 import Tour from './Tour/Tour';
@@ -14,6 +15,7 @@ import img6 from '../../images/carousole/martin3.jpg'
 
 const Home = () => {
     const [tours, setTours] = useState(null);
+    const history = useHistory();
 
     useEffect(() => {
         axios.get('https://mighty-waters-11643.herokuapp.com/tours')
@@ -30,8 +32,8 @@ const Home = () => {
                             <h3>Lets Explore The World!</h3>
                         </div>
                         <div className='py-5 d-flex flex-md-row flex-column'>
-                            <button className='ms-md-auto join-fb-btn join-google-btn'><i className="fab fa-facebook-f"></i> Join With Facebook</button>
-                            <button className='me-md-auto join-google-btn'><i className="fab fa-google"></i> Join With Google</button>
+                            <button onClick={() => history.push('/login')} className='ms-md-auto join-fb-btn join-google-btn'><i className="fab fa-facebook-f"></i> Join With Facebook</button>
+                            <button onClick={() => history.push('/login')} className='me-md-auto join-google-btn'><i className="fab fa-google"></i> Join With Google</button>
                         </div>
                     </div>
                 </div>

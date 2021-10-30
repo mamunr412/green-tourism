@@ -33,7 +33,7 @@ const Login = () => {
                 }
                 {
                     user.email ?
-                        <p>You Already Logged in</p>
+                        <p className='text-warning'>You Already Logged in</p>
                         :
                         <button className=' join-google-btn' onClick={loginWithGoogle} >
                             <i className="fab fa-google"></i> Login With Google</button>

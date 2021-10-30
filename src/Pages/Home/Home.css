@@ -13,7 +13,7 @@
         to bottom,
         rgba(0, 0, 0, 0.6),
         rgba(0, 0, 0, 0.6)
-      ),url('../../images//join-tour-bg.svg');
+      ),url('../../images/all-bg.jpg');
    background-size: cover;
    min-height: 62vh;
 }
@@ -109,4 +109,18 @@ box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.77);
 .places li:hover{
   text-decoration: underline;
   cursor: pointer;
+}
+
+.delete-button{
+  border:none;
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.6);
+  border-radius: 5px;
+  transition: 0.2s ease;
+  font-weight: 800;
+  background-color: #C42022;
+  padding-top: 5px;
+  color:white;
+}
+.delete-button:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.2);
 }
