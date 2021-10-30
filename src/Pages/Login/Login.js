@@ -24,9 +24,9 @@ const Login = () => {
 
     }
 
-    console.log(user);
     return (
         <div className='all-bg'>
+            <h3 className='text-center pt-5 tour-title border-bottom'>Log in to your account</h3>
             <div className="text-center py-5" >
                 {
                     error && <p className="text-danger">{error}</p>
@@ -35,7 +35,7 @@ const Login = () => {
                     user.email ?
                         <p>You Already Logged in</p>
                         :
-                        <button className='mt-5 join-google-btn' onClick={loginWithGoogle} >
+                        <button className=' join-google-btn' onClick={loginWithGoogle} >
                             <i className="fab fa-google"></i> Login With Google</button>
                 }
 

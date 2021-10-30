@@ -2,9 +2,15 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Row, Spinner } from 'react-bootstrap';
+import { Button, Carousel, Col, Form, Row, Spinner } from 'react-bootstrap';
 import './Home.css'
 import Tour from './Tour/Tour';
+import img1 from '../../images/carousole/bandarban1.jpeg'
+import img2 from '../../images/carousole/bandarban3.jpg'
+import img3 from '../../images/carousole/cox-bazar1.jpg'
+import img4 from '../../images/carousole/cox-bazar3.jpg'
+import img5 from '../../images/carousole/martin1.jpg'
+import img6 from '../../images/carousole/martin3.jpg'
 
 const Home = () => {
     const [tours, setTours] = useState(null);
@@ -31,8 +37,8 @@ const Home = () => {
                 </div>
             </div>
             <div className="all-bg">
-                <div className="container">
-                    <div>
+                <div className="container pb-3">
+                    <div className='pb-3'>
                         <div>
                             <h1 className='text-center tour-title pt-5 border-bottom'>OUR TOUR'S</h1>
                         </div>
@@ -49,15 +55,100 @@ const Home = () => {
                             }
                         </div>
                     </div>
-
-                    <div>
-                        <h3>Extra section</h3>
-
+                    <div className='px-3 rounded-3 best-places'>
+                        <h1 className='text-center tour-title pt-2 border-bottom'>Best Places</h1>
+                        <div className='py-3 row '>
+                            <div className='col-md-6'>
+                                <Carousel fade>
+                                    <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src={img1}
+                                            alt="First slide"
+                                        />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src={img2}
+                                            alt="Second slide"
+                                        />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src={img3}
+                                            alt="Third slide"
+                                        />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src={img4}
+                                            alt="Third slide"
+                                        />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src={img5}
+                                            alt="Third slide"
+                                        />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src={img6}
+                                            alt="Third slide"
+                                        />
+                                    </Carousel.Item>
+                                </Carousel>
+                            </div>
+                            <div className='col-md-6'>
+                                <h3 className='border-bottom my-3 text-white'>Here are some best places of Bangladesh you can visit.</h3>
+                                <div className='d-flex justify-content-around'>
+                                    <ul>
+                                        <li>Roma</li>
+                                        <li>Nilgiri</li>
+                                        <li>Kuakata</li>
+                                        <li>Jamuna River</li>
+                                        <li>Srimangal</li>
+                                        <li>Paharpur</li>
+                                        <li>Ratatgul Swamp Forest</li>
+                                    </ul>
+                                    <ul>
+                                        <li>Sundarbans</li>
+                                        <li>Chittagong Hill-Tracts</li>
+                                        <li>Lalbag Fort</li>
+                                        <li>Ahsan Manzil</li>
+                                        <li>Bisanakandi</li>
+                                        <li>Jaflong</li>
+                                        <li>Puthia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Extra section</h3>
+                </div>
 
-                    </div>
+            </div>
+            <div className='py-0 py-md-5 news-subscribe text-white'>
+                <div className='mx-2 mx-md-4 py-5'>
+                    <h3 className='fw-bold fs-1 py-3'>Subscribe to our Newsletter</h3>
+                    <h3 className='fs-1 py-3'>Get weekly travel inspiration, offers, contests, and more!</h3>
+                    <Form className='py-3'>
+                        <Row xs={1} md={3} className="g-4">
+                            <Col>
+                                <Form.Control placeholder="Zip Code" />
+                            </Col>
+                            <Col>
+                                <Form.Control placeholder="Email" />
+                            </Col>
+                            <Col>
+                                <Button variant="primary">Submit</Button>
+                            </Col>
+                        </Row>
+                    </Form>
                 </div>
             </div>
         </>

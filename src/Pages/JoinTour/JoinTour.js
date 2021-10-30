@@ -48,7 +48,7 @@ const JoinTour = () => {
             <div className='carousel-bg'>
                 <div className='container'>
                     <div className='col-md-6 pb-3 mx-md-auto mx-2 col'>
-                        <CarouselLoad key={_id} img1={img1} img2={img2} img3={img3}></CarouselLoad>
+                        <CarouselLoad key={_id} name={name} img1={img1} img2={img2} img3={img3}></CarouselLoad>
                     </div>
                 </div>
             </div>

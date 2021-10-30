@@ -31,7 +31,7 @@
       ),url('../../images//join-tour-bg.svg');
    background-size: cover;
    background-attachment: fixed;
-   min-height: 60vh;
+   min-height: 62vh;
 }
 
 .join-google-btn{
@@ -86,3 +86,17 @@ box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.77);
   background-color: rgba(255, 223, 42, 0.945);
 }
 
+.news-subscribe{
+  background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.12),
+        rgba(0, 0, 0, 0.6)
+      ),url('https://media.california.com/media/_versions_webp/articles/affordable_beach_towns__4088x2301___v2560x1440.webp');
+   background-size: cover;
+  
+}
+
+.best-places{
+  background-color: #276368;
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.77);
+}
