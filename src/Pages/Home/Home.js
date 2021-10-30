@@ -24,8 +24,8 @@ const Home = () => {
                             <h3>Lets Explore The World!</h3>
                         </div>
                         <div className='py-5 d-flex flex-md-row flex-column'>
-                            <button className='ms-md-auto join-fb-btn'><i className="fab fa-facebook-f"></i> Join With Facebook</button>
-                            <button className='me-md-auto join-fb-btn join-google-btn'><i class="fab fa-google"></i> Join With Google</button>
+                            <button className='ms-md-auto join-fb-btn join-google-btn'><i className="fab fa-facebook-f"></i> Join With Facebook</button>
+                            <button className='me-md-auto join-google-btn'><i className="fab fa-google"></i> Join With Google</button>
                         </div>
                     </div>
                 </div>

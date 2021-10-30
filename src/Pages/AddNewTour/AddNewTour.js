@@ -44,19 +44,21 @@ const AddNewTour = () => {
     }, [tourInserted])
 
     const deleteTour = id => {
-        if (tours.length > 6) {
-            axios.delete(`https://mighty-waters-11643.herokuapp.com/tour/${id}`)
-                .then(res => {
-                    if (res.data.deletedCount > 0) {
-                        alert('Tour Deleted');
-                        const remaining = tours.filter(tour => tour._id !== id);
-                        setTours(remaining);
-                    }
-                })
-        } else {
-            alert('If Your want to delete, All Tour Should be more then six')
+        const confirm = window.confirm('Are You Sure?')
+        if (confirm) {
+            if (tours.length > 6) {
+                axios.delete(`https://mighty-waters-11643.herokuapp.com/tour/${id}`)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            alert('Tour Deleted');
+                            const remaining = tours.filter(tour => tour._id !== id);
+                            setTours(remaining);
+                        }
+                    })
+            } else {
+                alert('Sorry! If Your want to delete, All Tour Should be more then six')
+            }
         }
-
 
     }
 

@@ -26,18 +26,22 @@ const Login = () => {
 
     console.log(user);
     return (
-        <div className="text-center my-5" >
-            {
-                error && <p className="text-danger">{error}</p>
-            }
-            {
-                user.email ?
-                    <p>You Already Logged in</p>
-                    :
-                    <button onClick={loginWithGoogle} >Login With Google</button>
-            }
+        <div className='all-bg'>
+            <div className="text-center py-5" >
+                {
+                    error && <p className="text-danger">{error}</p>
+                }
+                {
+                    user.email ?
+                        <p>You Already Logged in</p>
+                        :
+                        <button className='mt-5 join-google-btn' onClick={loginWithGoogle} >
+                            <i className="fab fa-google"></i> Login With Google</button>
+                }
 
+            </div>
         </div>
+
     );
 };
 
