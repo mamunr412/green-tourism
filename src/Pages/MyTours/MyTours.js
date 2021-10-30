@@ -46,7 +46,7 @@ const MyTours = () => {
                     loading ?
                         <Spinner animation="border" variant="success" />
                         :
-                        <div>
+                        <div className='pt-3'>
                             {
                                 myTours.length ?
                                     <Row xs={1} md={4} className="g-4">

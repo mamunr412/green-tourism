@@ -44,11 +44,12 @@ const ManageTours = () => {
                 }
             })
     }
+
     return (
         <div className='all-bg'>
             <div className="container text-center py-4">
                 <h1 className='pt-3 tour-title border-bottom text-uppercase'>Manage All joined Tours</h1>
-                <div>
+                <div className='pt-3'>
                     {
                         loading ?
                             <Spinner animation="border" variant="success" />

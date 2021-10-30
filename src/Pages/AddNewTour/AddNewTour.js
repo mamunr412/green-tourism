@@ -76,32 +76,33 @@ const AddNewTour = () => {
                         <Row className="mb-3">
                             <Form.Group className="col-md-4">
                                 <Form.Label>Tour Name</Form.Label>
-                                <Form.Control {...register("name")} type="text" placeholder="Enter Tour Name" />
+                                <Form.Control required {...register("name")} type="text" placeholder="Enter Tour Name" />
                             </Form.Group>
                             <Form.Group className="col-md-4">
                                 <Form.Label>Tour Cost</Form.Label>
-                                <Form.Control {...register("cost")} type="text" placeholder="Enter Tour Cost" />
+                                <Form.Control required {...register("cost")} type="text" placeholder="Enter Tour Cost" />
                             </Form.Group>
                             <Form.Group className="col-md-4">
                                 <Form.Label>Plan for</Form.Label>
-                                <Form.Control {...register("planFor")} type="text" placeholder="How many days for Tour?" />
+                                <Form.Control required {...register("planFor")} type="text" placeholder="How many days for Tour?" />
                             </Form.Group>
                         </Row>
 
                         <Row className="mb-3">
                             <Form.Group className="col-md-6">
                                 <Form.Label>Check in Date</Form.Label>
-                                <Form.Control {...register("checkInDate")} type="text" placeholder="Enter Check in date" />
+                                <Form.Control required {...register("checkInDate")} type="text" placeholder="Enter Check in date" />
                             </Form.Group>
                             <Form.Group className="col-md-6">
                                 <Form.Label>Check out Date</Form.Label>
-                                <Form.Control {...register("checkOutDate")} type="text" placeholder="Enter Check out date" />
+                                <Form.Control required {...register("checkOutDate")} type="text" placeholder="Enter Check out date" />
                             </Form.Group>
                         </Row>
 
                         <Form.Label>Overview</Form.Label>
                         <FloatingLabel controlId="floatingTextarea2" label="Write tour overview here...">
                             <Form.Control
+                                required
                                 {...register("overview")}
                                 as="textarea"
                                 placeholder="Leave a comment here"
@@ -140,16 +141,16 @@ const AddNewTour = () => {
                             <Row className='col-md-9'>
                                 <Form.Group className="col-md-6">
                                     <Form.Label>Tour Image 1</Form.Label>
-                                    <Form.Control {...register("img1")} type="text" placeholder="Enter Tour Image Link" />
+                                    <Form.Control required {...register("img1")} type="text" placeholder="Enter Tour Image Link" />
                                 </Form.Group>
 
                                 <Form.Group className="col-md-6">
                                     <Form.Label>Tour Image 2</Form.Label>
-                                    <Form.Control {...register("img2")} type="text" placeholder="Enter Tour Image Link" />
+                                    <Form.Control required {...register("img2")} type="text" placeholder="Enter Tour Image Link" />
                                 </Form.Group>
                                 <Form.Group className="col-md-6">
                                     <Form.Label>Tour Image 3</Form.Label>
-                                    <Form.Control {...register("img3")} type="text" placeholder="Enter Tour Image Link" />
+                                    <Form.Control required {...register("img3")} type="text" placeholder="Enter Tour Image Link" />
                                 </Form.Group>
                             </Row>
                         </Row>
